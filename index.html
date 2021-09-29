@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>Grie</title>
+</head>
+<body>
+    <header class="header container">
+            <div class="header_inner">
+                <a class="header_logo" href="#">
+                    <img src="./assets/img/header_logo.png" alt="">
+                </a>
+                <nav class="nav" id="nav">
+                    <ul class="nav_links">
+                        <li>
+                            <a class="nav_link" href="#">Магазин</a>
+                        </li>
+                        <li>
+                            <a class="nav_link" href="#">Доставка</a>
+                        </li>
+                        <li>
+                            <a class="nav_link" href="#">Сертификаты</a>
+                        </li>
+                        <li>
+                            <a class="nav_link" href="#">Контакты</a>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button class="drop_btn">РУС</button>
+                                <div class="dropdown_content">
+                                    <a href="#">УКР</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav_link cart_icon" onclick="cartToggle()" href="#">
+                                <i class="fas fa-shopping-bag"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--
+                    <a class="nav_link" href="#">Магазин</a>
+                    <a class="nav_link" href="#">Доставка</a>
+                    <a class="nav_link" href="#">Сертификаты</a>
+                    <a class="nav_link" href="#">Контакты</a>
+                    <div class="dropdown">
+                        <button class="drop_btn">РУС</button>
+                        <div class="dropdown_content">
+                            <a href="#">УКР</a>
+                        </div>
+                    </div>
+                    <a class="nav_link" href="#">
+                        <i class="fas fa-shopping-bag"></i>
+                    </a>
+                    -->
+                </nav>
+
+                <button class="nav-toggle" id="nav_toggle" type="button" onclick="navToggle()">
+                    <span class="nav-toggle__item" id="burger"></span>
+                </button>
+            </div>
+    </header>
+
+    <!-- Cart -->
+
+    <section class="cart container" id="cart">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h2>Корзина</h2>
+                <a href="#" class="cart-close" onclick="cartToggle()">
+                    <i class="fas fa-times"></i>
+                </a>
+            </div>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">Товар</span>
+                <span class="cart-price cart-header cart-column">Стоимость</span>
+                <span class="cart-quantity cart-header cart-column">Кол-во</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Всего</strong>
+                <span class="cart-total-price">₴0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">Купить</button>
+        </div>
+    </section>
+
+    <!-- Intro -->
+
+    <section class="intro container">
+            <div class="intro_inner">
+                <h1 class="intro_title">Timeless. Smart</h1>
+                <p class="intro_text">Так, ми закохані в сумки-саквояж і вже понад 3 роки ми зосереджені на виробництві лише цієї старовинної моделі.</p>
+                <button class="btn intro_btn">
+                    <a class="" href="#">В магазин</a>
+                </button>
+            </div>
+    </section>
+
+    <!-- About -->
+
+    <section class="about">
+        <div class="container">
+            <div class="about_inner">
+                <img class="about_img" src="./assets/img/About/about.png" alt="">
+                <div class="about_info">
+                    <h2 class="content_title">О бренде</h2>
+                    <p class="content_text about_text">Ви можете бути певні, що саквояжі не вийдуть з моди наступного сезону, як не виходять вже більш 
+                        ніж 200 років. А ми, зі свого боку, забезпечимо найвищу якість та обслуговування вашого GRIE на протязі всього часу 
+                        після покупки.
+                    </p>
+                    <button class="btn content_btn">
+                        <a href="#">Подробнее</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Advantages -->
+
+    <section class="advantages container">
+        <div class="carousel_track-container">
+            <div class="carousel_header">
+                <button class="carousel_button carousel_button--left" onclick="changeSlide(-1)">
+                    <img src="./assets/img/Slider/arrow-left.png" alt="">
+                </button>
+                <ul class="slide_num">
+                    <li class="slide_num_inner" id="carousel-text-nav"></li>
+                </ul>
+                <button class="carousel_button carousel_button--right" onclick="changeSlide(1)">
+                    <img src="./assets/img/Slider/arrow-right.png" alt="">
+                </button>
+            </div>
+            <ul class="carousel_track">
+                <li class="carousel_slide current_slide">
+                    <h2 class="content_title advantages_title" id="carousel-title"></h2>
+                    <p class="content_text advantages_text" id="carousel-description"></p>
+                </li>
+            </ul>
+            <button class="btn content_btn">
+                <a href="#">В магазин</a>
+            </button>
+        </div>
+    </section>
+
+
+    <!-- Product -->
+
+    <section class="product">
+        <div class="container">
+            <div class="product_header">
+                <h2 class="content_title">Товар</h2>
+                <button class="btn product_btn">
+                    <a href="#">В магазин</a>
+                </button>
+            </div>
+            <div class="product_inner" id="product_scroll">
+                <article class="product_item">
+                    <img class="product_img shop-item-image" src="./assets/img/product/1.png" alt="">
+                    <p class="product_color">Цвет нюд</p>
+                    <p class="product_text shop-item-title">Женская сумка GRIE Baby Chic1</p>
+                    <p class="product_price shop-item-price">₴ 6230</p>
+                    <button class="shop-item-button" type="button">В корзину</button>
+                </article>
+
+                <article class="product_item">
+                    <img class="product_img shop-item-image" src="./assets/img/product/2.png" alt="">
+                    <p class="product_color">Цвет нюд</p>
+                    <p class="product_text shop-item-title">Женская сумка GRIE Baby Chic2</p>
+                    <p class="product_price shop-item-price">₴ 6230</p>
+                    <button class="shop-item-button" type="button">В корзину</button>
+                </article>
+
+                <article class="product_item">
+                    <img class="product_img shop-item-image" src="./assets/img/product/3.png" alt="">
+                    <p class="product_color">Цвет нюд</p>
+                    <p class="product_text shop-item-title">Женская сумка GRIE Baby Chic3</p>
+                    <p class="product_price shop-item-price">₴ 6230</p>
+                    <button class="shop-item-button" type="button">В корзину</button>
+                </article>
+
+                <article class="product_item">
+                    <img class="product_img shop-item-image" src="./assets/img/product/4.png" alt="">
+                    <p class="product_color">Цвет нюд</p>
+                    <p class="product_text shop-item-title">Женская сумка GRIE Baby Chic4</p>
+                    <p class="product_price shop-item-price">₴ 6230</p>
+                    <button class="shop-item-button" type="button">В корзину</button>
+                </article>
+
+                <article class="product_item">
+                    <img class="product_img shop-item-image" src="./assets/img/product/2.png" alt="">
+                    <p class="product_color">Цвет нюд</p>
+                    <p class="product_text shop-item-title">Женская сумка GRIE Baby Chic5</p>
+                    <p class="product_price shop-item-price">₴ 6230</p>
+                    <button class="shop-item-button" type="button">В корзину</button>
+                </article>
+
+                <article class="product_item">
+                    <img class="product_img shop-item-image" src="./assets/img/product/2.png" alt="">
+                    <p class="product_color">Цвет нюд</p>
+                    <p class="product_text shop-item-title">Женская сумка GRIE Baby Chic6</p>
+                    <p class="product_price shop-item-price">₴ 6230</p>
+                    <button class="shop-item-button" type="button">В корзину</button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- For You -->
+
+    <section class="for_you">
+        <div class="container">
+            <div class="for_you_inner">
+                <div class="for_you_info">
+                    <h2 class="content_title">Сумка для вас</h2>
+                    <p class="content_text for_you_text">Кроме саквояжей, что мы имеем в наличии, мы принимаем индивидуальные заказы. 
+                        Вы можете выбрать размер саквояжа, его цвет и даже цвет подложки.
+                    </p>
+                    <button class="btn content_btn">
+                        <a href="#">В магазин</a>
+                    </button>
+                </div>
+                <img class="for_you_img" src="./assets/img/for_you.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Map -->
+
+    <section class="map container">
+        <div class="map_inner">
+            <div class="map_content">
+                <h2 class="content_title map_title">Шоу-румы в Киеве</h2>
+                <article class="map_item">
+                    <h3 class="item_subtitle">OSBNK</h3>
+                    <p class="item_text">ул. Кожемяцкая, 12г. 1 этаж,<br> магазин “Inside U”</p>
+                </article>
+                <article class="map_item">
+                    <h3 class="item_subtitle">ЦУМ</h3>
+                    <p class="item_text">ул. Крещатик, 38, 3 этаж,<br> отдел “Аксессуары”</p>
+                </article>
+                <article class="map_item">
+                    <h3 class="item_subtitle">StyleInsider</h3>
+                    <p class="item_text">ул. Рейтарская 21/13</p>
+                </article>
+            </div>
+            <div class="map_container">
+                <iframe class="google_map" src="https://www.google.com/maps/d/embed?mid=1imLPcuNPglxJtKKpcBs8uu0c1KkFe9Dq" width="880" height="550"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discounts -->
+
+    <section class="discounts container">
+        <p class="discounts_title">Первыми получайте информацию о скидках и акциях</p>
+        <form class="subscribe" method="POST">
+            <input class="subscribe_input" type="email" name="name" placeholder="Ваш e-mail">
+        </form>
+        <div class="subscribe_border"></div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="footer container">
+        <div class="footer_inner">
+            <div class="footer_item">
+                <a href="#">
+                    <i class="fab fa-instagram footer_icon"></i>
+                </a>
+                <a href="#" class="footer_icon">
+                    <i class="fab fa-facebook footer_icon"></i>
+                </a>
+            </div>
+            <div class="footer_item">
+                <nav class="footer_nav">
+                    <a class="fnav_link" href="#">Магазин</a>
+                    <a class="fnav_link" href="#">Доставка</a>
+                    <a class="fnav_link" href="#">Уход</a>
+                    <a class="fnav_link" href="#">Сертификаты</a>
+                    <a class="fnav_link" href="#">Контакты</a>
+                </nav>
+            </div>
+            <div class="footer_item">
+                <a href="#">
+                    <img class="footer_logo" src="./assets/img/footer_logo.png" alt="">
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+
+
+    
+    <script src="./assets/js/app.js"></script>
+    
+
+</body>
+</html>
